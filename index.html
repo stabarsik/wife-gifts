@@ -27,14 +27,15 @@
       </svg>
       <!--End First Gift Icon-->
     </div>
-    <form action="" class="form" name="loginForm">
+    <form action="" class="form" name="loginForm" novalidate>
       <div class="titles">
         <h1 class="title">Подарки жене</h1>
         <p class="subtitle">А ты точно моя жена?</p>
       </div>
       <label for='email' class="login-form-label">
         <span>Введи iCloud почту</span>
-        <input type="email" name='email' placeholder="example@icloud.ru" autofocus required></input>
+        <input type="email" id="email-input" name='email' placeholder="example@icloud.com" autocomplete="email" autofocus data-error-message="Нужна iCloud-почта: example@icloud.com" pattern="yula.bu@icloud.com"></input>
+        <span class="email-input-error form__input-error"></span>
       </label>
       <button type="submit">Зайти</button>
     </form>

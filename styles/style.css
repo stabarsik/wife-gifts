@@ -147,7 +147,7 @@ label span {
   color: red;
 } */
 
-input[type="email"]{
+input{
   width: 100%;
   padding: 10px 15px;
   border: 1px #000 solid;
@@ -155,7 +155,7 @@ input[type="email"]{
   font-family: inherit;
   font-size: inherit;
   color: inherit;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   /* outline: red 1px solid; */
 }
 
@@ -170,6 +170,15 @@ input:focus {
 input:focus-visible {
   outline: 2px solid #000;
   outline-offset: 0px;
+}
+
+.form__input_type_error {
+  border: none;
+  outline: 2px solid #d21f3c;
+}
+
+.form__input-error_active {
+  color: #d21f3c;
 }
 
 
