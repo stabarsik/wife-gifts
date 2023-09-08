@@ -10,7 +10,7 @@
 </head>
 <body class="grid">
   <div class="login-page">
-    <a href="#" class="contain-icon icon-hook">
+    <div class="contain-icon icon-hook">
       <!--Begin First Gift Icon-->
       <svg class="box-icon box-icon-1" version="1.1" width="74px" height="89px" viewBox="0 0 74.479 89.141">
         <path class="box-bottom-1" fill="none" stroke="#000" stroke-width="4" stroke-miterlimit="10" d="M67.874,84.885
@@ -26,12 +26,16 @@
         c-3.113,8.734-14.479,10.773-22.678,10.773"/>
       </svg>
       <!--End First Gift Icon-->
-    </a>
-    <h1 class="title">Подарки жене</h1>
-    <p class="subtitle">А ты точно моя жена?</p>
-    <form action="" class="form">
-      <label for='email'></label>
-      <input type="email" name='email' placeholder="Введи iCloud почту"></input>
+    </div>
+    <form action="" class="form" name="loginForm">
+      <div class="titles">
+        <h1 class="title">Подарки жене</h1>
+        <p class="subtitle">А ты точно моя жена?</p>
+      </div>
+      <label for='email' class="login-form-label">
+        <span>Введи iCloud почту</span>
+        <input type="email" name='email' placeholder="example@icloud.ru" autofocus required></input>
+      </label>
       <button type="submit">Зайти</button>
     </form>
   </div>
