@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background: #E1FFC9;
+  color: #000;
+}
+
+.grid {
+  min-width: 320px;
+  /* 880px + paddings */
+  max-width: 918px;
+  display: grid;
+  margin: 0 auto;
+  padding: 0 19px;
+  grid-template-columns: repeat(12, 1fr);
+  /* justify-content: center; */
+  grid-auto-columns: 0px;
+  /* place-items: center; */
+}

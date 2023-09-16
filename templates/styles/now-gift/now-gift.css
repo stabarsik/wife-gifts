@@ -1,0 +1,23 @@
+.now-gift {
+  grid-column: 1/13;
+  gap: 1rem;
+  margin-top: 50px;
+  list-style: none;
+  padding: 0;
+  --modifier: calc((30rem - 100%) * 999);
+  --ratio: 16 / 9;
+}
+
+.now-gift-card {
+  flex-basis: 100%;
+  aspect-ratio: var(--ratio);
+  flex-grow: calc(var(--ratio));
+}
+
+.now-gift-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio);
+  object-fit: cover;
+}

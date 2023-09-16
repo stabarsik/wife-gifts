@@ -1,0 +1,69 @@
+.modal-image {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  min-width: 320px;
+  /* container size icluding close icon*/
+  width: min(100%, calc(75vw + 32px + 32px + 8px));
+  height: 100%;
+  border: 0;
+  padding: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+[popover]:not(:popover-open):not(dialog[open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-image:popover-open {
+  position: relative;
+}
+
+.close-btn-image {
+  right: -36px;
+  visibility: visible;
+}
+
+.close-btn-image:disabled {
+  visibility: hidden;
+}
+
+@media (max-width: 430px) {
+  .close-btn-image{
+    right: 0;
+  }
+}
+
+.modal-image::backdrop {
+  background: rgb(0 0 0 / 90%);
+}
+
+.wrapper-image{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  /* width: min(100%, 75vw); */
+  /* height: min(100%, 75vh); */
+  margin: 0 auto;
+  /* border-radius: 10px; */
+}
+
+.image-big {
+  max-width: 75vw;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.caption {
+  color: #fff;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}

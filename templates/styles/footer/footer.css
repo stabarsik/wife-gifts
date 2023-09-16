@@ -1,0 +1,21 @@
+.footer{
+  grid-column: 1/13;
+  margin: 0;
+  padding: 0;
+  margin: 66px 0 60px;
+}
+
+@media (max-width: 405px) {
+  .footer{
+    margin: 48px 0 36px;
+  }
+}
+
+.copy {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  color: #545454;
+}

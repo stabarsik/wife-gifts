@@ -57,6 +57,7 @@ loginForm.addEventListener('submit', (event) => {
 
 
 const urlLocationHandler = async (inputElement) => {
+  let html;
   if (inputElement.validity.patternMismatch) {
     // данные атрибута доступны у элемента инпута через ключевое слово dataset.
     // обратите внимание, что в js имя атрибута пишется в camelCase (да-да, в
@@ -64,8 +65,13 @@ const urlLocationHandler = async (inputElement) => {
     inputElement.setCustomValidity(inputElement.dataset.errorMessage);
     showInputError(inputElement, inputElement.validationMessage);
   }
+  else {
+    // html = await fetch(Routes['/auth'].template).then((response) => response.text());
+    location.href=Routes['/auth'].template;
+  }
 
-  const html = await fetch(Routes['/auth'].template).then((response) => response.text());
+  
+  
   console.log(html);
   // const elementCopy = html.cloneNode(true);
   // loginPage.append(html); 

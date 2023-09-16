@@ -1,0 +1,8 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0px 20px 0 21px;
+  /* position: relative;
+  text-overflow: ellipsis; */
+}

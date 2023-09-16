@@ -1,0 +1,129 @@
+.cards {
+  grid-column: 1/13;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  list-style: none;
+  /* 
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: 361px;
+  grid-auto-columns: 0px;
+  gap: 20px 17px; */
+}
+
+.row {
+  --modifier: calc((30rem - 100%) * 999);
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  flex-basis: max(var(--modifier), 0px );  
+  aspect-ratio: var(--ratio);
+  flex-grow: calc(var(--ratio));
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.row {
+  border: 1px dashed rgb(255 255 255 / 0.4);
+  margin-inline: auto;
+}
+
+.row + .row {
+  margin-top: 1rem;
+}
+
+.item {
+  background: #f09;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: relative;
+}
+
+.item + .item { background: #09f;}
+
+.item + .item + .item { background: #90f;}
+
+a {
+  color: #f09;
+}
+
+
+/* @media (max-width: 405px) {
+  .cards{
+    margin-top: 36px;
+  }
+}
+
+.card {
+  position: relative;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.place {
+  width: 100%;
+  height: 282px;
+  object-fit: cover;
+}
+
+.place:hover {
+  cursor: pointer;
+}
+
+.name {
+  width: 80%;
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.like {
+  appearance: none;
+  border: 0px;
+  background: url(../../images/like-disable.svg) no-repeat;
+  background-size: cover;
+  width: 22px;
+  height: 19px;
+  padding: 0;
+}
+
+.like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.active {
+  background: url(../../images/like-active.svg);
+}
+
+.delete {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  top: 20px;
+  right: 20px;
+  background: url(../../images/delete.svg);
+}
+
+.delete:hover {
+  cursor: pointer;
+} */

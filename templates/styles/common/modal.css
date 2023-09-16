@@ -1,0 +1,156 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  /* display: grid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  min-width: 320px;
+  /* container size icluding close icon*/
+  width: min(100%, calc(430px + 32px + 32px + 8px));
+  height: min(100%, calc(330px + 32px + 32px + 8px));
+  border: 0;
+  padding: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* .active-popover {
+  
+} */
+
+[popover]:not(:popover-open):not(dialog[open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal:popover-open {
+  position: relative;
+}
+
+@media (max-width: 430px) {
+  .modal:popover-open{
+    padding: 0 19px;
+  }
+}
+
+.image {
+  max-width: 75vw;
+  width: 100%;
+  max-height: 75vh;
+  background-color: transparent;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 430px) {
+  .wrapper{
+    height: 322px;
+  }
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 50%);
+}
+
+.close-btn {
+  position: relative;
+  background: url(../../images/close-icon.svg) no-repeat;
+  align-self: flex-end;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  right: 0;
+  top: 0;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background-color: transparent;
+}
+
+.close-btn:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 430px) {
+  .close-btn{
+    width: 20px;
+    height: 20px;
+    /* compensate reducing of size parent container */
+    right: 0px;
+    top: -16px;
+  }
+}
+
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: min(100%, 430px);
+  height: min(100%, 330px);
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+  column-gap: 30px;
+  padding: 34px 36px 37px;
+}
+
+.title-form {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  margin: 0;
+  align-self: flex-start;
+}
+
+@media (max-width: 430px) {
+  .title-form{
+    font-size: 18px;
+  }
+}
+
+form > input[type="text"]{
+  width: 100%;
+  height: 27px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+}
+
+form > button[type="submit"]{
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  height: 50px;
+  align-self: flex-end;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+form > button[type="submit"]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+@media (max-width: 430px) {
+  form > button[type="submit"]{
+    font-size: 14px;
+  }
+}
