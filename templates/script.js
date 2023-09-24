@@ -49,16 +49,16 @@ class Wishlist {
       const card = Cards.createCard(this.cardTemplate, element.name, element.link);
       this.addCard(this.lastRow, card, element.image, element.name);
     })
-    // this.addForm?.addEventListener('submit', this.formHandler.bind(this));
+    this.addForm?.addEventListener('submit', this.formHandler.bind(this));
   } 
-  // formHandler() {
-  //   this.evt.preventDefault();
-  //   if (this.addForm?.nameInput.value !== "" && this.addForm?.linkInput.value !== "" && this.addForm?.linkGiftInput.value !=="") {
-  //     this.lastRow = this.checkExistingRow(this.cardsContainer);
-  //     const card = Cards.createCard(this.cardTemplate, this.addForm?.nameInput.value, this.addForm?.linkGiftInput.value);
-  //     this.addCard(this.lastRow, card, this.addForm?.linkGiftInput.value, this.addForm?.nameInput.value, true)
-  //   }
-  // }
+  formHandler(evt) {
+    evt.preventDefault();
+    if (this.addForm?.nameInput.value !== "" && this.addForm?.linkInput.value !== "" && this.addForm?.linkGiftInput.value !=="") {
+      this.lastRow = this.checkExistingRow(this.cardsContainer);
+      const card = Cards.createCard(this.cardTemplate, this.addForm?.nameInput.value, this.addForm?.linkGiftInput.value);
+      this.addCard(this.lastRow, card, this.addForm?.linkInput.value, this.addForm?.nameInput.value, true)
+    }
+  }
   checkExistingRow(cardsContainer) {
     let lastRow = {};
     const existingRows = cardsContainer.querySelectorAll('.row');
@@ -82,17 +82,23 @@ class Wishlist {
     return lastRow;
   }
   addCard(row, card, imageLink, imageAlt, startContainer = false) {
+    const giftImage = card.querySelector('.item__image');
+    this.createCardImage(giftImage, imageLink, imageAlt);
     startContainer ? row.prepend(card) : 
     row.append(card);
-    this.createCardImage(card, imageLink, imageAlt);
+    this.setAspectRatio(card, giftImage);
   }
-  createCardImage(card, imageLink, imageAlt) {
-    const giftImage = card.querySelector('.item__image');
+  createCardImage(giftImage, imageLink, imageAlt) {
     giftImage.src = imageLink;
     giftImage.alt = imageAlt;
-    const realWidth = giftImage.naturalWidth;
-    const realHeight = giftImage.naturalHeight;
-    card.style.setProperty('--ratio', `${realWidth} / ${realHeight}`);
+  }
+  setAspectRatio(card, giftImage){
+    giftImage.addEventListener('load', () => { 
+      const realWidth = giftImage.naturalWidth;
+      const realHeight = giftImage.naturalHeight;
+      card.style.setProperty('--ratio', `${realWidth} / ${realHeight}`);
+    });
+    
   }
 }
 
@@ -108,9 +114,9 @@ class Cards {
   
   
     const deleteIcon = cardElement.querySelector('.delete');
-  
+    
     deleteIcon.addEventListener('click', (evt) => {
-      deleteItem(evt.target.parentElement);
+      evt.target.parentElement.remove();
     });
 
     return cardElement;
