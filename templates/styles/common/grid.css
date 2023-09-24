@@ -10,7 +10,7 @@ body {
 .grid {
   min-width: 320px;
   /* 880px + paddings */
-  max-width: 918px;
+  max-width: 1400px;
   display: grid;
   margin: 0 auto;
   padding: 0 19px;

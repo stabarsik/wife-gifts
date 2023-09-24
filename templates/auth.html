@@ -77,18 +77,42 @@
       </form>
     </li>
   </ul>
-  <ul class="cards">
-    <h2 class="cards__title">Не в пути, но в планах</h2>
+  <ul class="wishlist">
+    <h2 class="wishlist__title">Не в пути, но в планах</h2>
     <div class="row">
-      <div style="--ratio: 4 / 3;" class="item">4:3</div>
-      <div style="--ratio: 2 / 3;" class="item">2:3</div>
+      
+    </div>
+    <!-- <div class="row">
+      <div style="--ratio: 4 / 3;" class="item">
+        <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/closer-look/blue_titanium__wsqgpa9i1822_large_2x.jpg" class="item__image">
+        <div class="info"><a href="https://www.apple.com/iphone-15-pro/" class="info__name">Айфон пятнадцатый</a></div>
+      </div>
+      <div style="--ratio: 2 / 3;" class="item">
+        <img src="https://bottega-veneta.dam.kering.com/m/2ec387e1347c19a7/Large-600261V38S12282_A.jpg?v=1" class="item__image">
+        <div class="info"><a href="https://www.bottegaveneta.com/en-us/small-jodie-jacobean-600261V38S12282.html" class="info__name">Bottega Veneta Small Jodie</a></div>
+      </div>
     </div>
     
     <div class="row">
-      <div style="--ratio: 3 / 2;" class="item">3:2</div>
-      <div style="--ratio: 16 / 9;" class="item">16:9</div>
-      <div style="--ratio: 1 / 1;" class="item">1:1</div>
+      <div style="--ratio: 3 / 2;" class="item">
+        <img src="https://incrussia.ru/wp-content/uploads/2022/08/1-1.jpg" class="item__image">
+        <div class="info"><a href="https://www.aviasales.ru/" class="info__name">В Сербию</a></div>
+      </div>
+      <div style="--ratio: 16 / 9;" class="item">
+        <img src="https://thumb.tildacdn.com/tild6166-6431-4632-b633-313839653831/-/format/webp/1920N1080-3.jpg" class="item__image">
+        <div class="info"><a href="https://somewhere.show/5nizza-montenegroru" class="info__name">Билет на Пятницу</a></div>
+      </div>
     </div>
+    <div class="row">
+      <div style="--ratio: 3 / 2;" class="item">
+        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6eff4067-24d3-47d8-b524-6553d17ba71f/air-huarache-craft-womens-shoes-Cp4dSR.png" class="item__image">
+        <div class="info"><a href="https://www.nike.com/t/air-huarache-craft-womens-shoes-Cp4dSR/DQ8031-100" class="info__name">Найки хуарачи</a></div>
+      </div>
+      <div style="--ratio: 16 / 9;" class="item">
+        <img src="https://sporttop.com.ua/upload/iblock/30f/30f85a99a0b98a777332df6bcc6d20b0.jpg" class="item__image">
+        <div class="info"><a href="https://sporttop.com.ua/ua/catalog/aktivnyy_sport/skeytbordy/longbordy/29346/" class="info__name">Лонгборд левый какой-то</a></div>
+      </div>
+    </div> -->
     <!-- <template id="card">
       <li class="card">
         <i class="delete"></i>
@@ -103,6 +127,13 @@
   <footer class="footer">
     <p class="copy">© 2020 Mesto Russia</p>
   </footer>
+  <template id="card">
+    <li style="--ratio: 4 / 3;" class="item">
+      <i class="delete"></i>
+      <img src="" alt="" class="item__image" />
+      <div class="info"><a href="" class="info__name"></a></div>
+    </li>
+  </template>
   <div id="add-popover" class="modal" popover>
     <div class="wrapper">
       <button
@@ -113,13 +144,14 @@
       </button>
       <form action="" class="form" name="addForm">
         <h3 class="title-form">Новое место</h3>
-        <input type="text" name="placeInput" id="place" class="place_add-form" placeholder="Название" value="">
+        <input type="text" name="nameInput" id="place" class="place_add-form" placeholder="Название подарка" value="">
         <input type="text" name="linkInput" id="link" class="link_add-form" placeholder="Ссылка на картинку" value="">
+        <input type="text" name="linkGiftInput" id="linkGift" class="link_add-form" placeholder="Ссылка на подарок" value="">
         <button type="submit" class="formButton" name="addSubmitButton">Создать</button>
       </form>
     </div>
   </div>
-  <div id="edit-popover" class="modal" popover>
+  <!-- <div id="edit-popover" class="modal" popover>
     <div class="wrapper">
       <button
         class="close-btn"
@@ -134,7 +166,7 @@
         <button type="submit" class="formButton">Сохранить</button>
       </form>
     </div>
-  </div>
+  </div> -->
 
   <div id="image-popover" class="modal-image" popover>
     <div class="wrapper-image">

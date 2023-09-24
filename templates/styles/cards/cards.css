@@ -1,16 +1,13 @@
-.cards {
+.wishlist {
   grid-column: 1/13;
   padding: 0;
   margin: 0;
   margin-top: 50px;
   list-style: none;
-  /* 
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-template-rows: 361px;
-  grid-auto-columns: 0px;
-  gap: 20px 17px; */
+}
+
+.wishlist__title {
+  margin: 3rem auto;
 }
 
 .row {
@@ -18,7 +15,7 @@
   
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .item {
@@ -31,6 +28,23 @@
   display: block;
   width: 100%;
   height: auto;
+  /* aspect-ratio: var(--ratio);
+  object-fit: cover; */
+}
+
+.info {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+}
+
+.info__name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 38px;
+  line-height: 85%;
+  text-decoration: none;
+  border-bottom: 4px #ec53af solid;
+  text-transform: lowercase;
 }
 
 .row {
@@ -39,7 +53,7 @@
 }
 
 .row + .row {
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .item {
@@ -50,6 +64,7 @@
   justify-content: center;
   font-size: 2rem;
   position: relative;
+  box-shadow: 30px -30px teal;
 }
 
 .item + .item { background: #09f;}
@@ -57,7 +72,20 @@
 .item + .item + .item { background: #90f;}
 
 a {
-  color: #f09;
+  color: #ec53af;
+}
+
+.delete {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  top: 20px;
+  right: 20px;
+  background: url(../../images/delete.svg);
+}
+
+.delete:hover {
+  cursor: pointer;
 }
 
 
